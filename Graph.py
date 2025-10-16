@@ -1,6 +1,7 @@
 import networkx as nx
 from netgraph import InteractiveGraph
 import matplotlib.pyplot as plt
+from Members import MembersGraph
 
 
 """
@@ -10,15 +11,7 @@ Visualize the adjacency list
 
 ## Create adjacency list using dictionary
 members_list = ["Josh", "Molly", "Morgon", "Louis", "Harry", "Justin", "Johann"]
-members_graph = {}
-members_graph['Josh'] = ["Molly", "Morgon", "Louis"]
-members_graph['Molly'] = ["Josh", "Harry", "Justin", "Louis", "Johann"]
-members_graph['Morgon'] = ["Harry", "Justin"]
-members_graph['Louis'] = ["Harry", "Justin"]
-members_graph['Harry'] = ["Molly", "Morgon"]
-members_graph['Justin'] = ["Harry", "Justin"]
-members_graph['Johann'] = ["Molly", "Morgon"]
-
+members_graph = MembersGraph.LEGEND_GRAPH
 
 ## create a visualization of adjacency list as a directed graph
 Graph = nx.DiGraph()
