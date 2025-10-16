@@ -3,53 +3,12 @@ from netgraph import InteractiveGraph
 import matplotlib.pyplot as plt
 from Members import MembersGraph
 
-
 """
 Create an adjacency list graph
 Visualize the adjacency list
 https://networkx.org/documentation/stable/
 https://networkx.org/documentation/stable/reference/algorithms/index.html
 """
-
-def hamilton(G: dict):
-    num_nodes = len(G)
-    # print(num_nodes)
-    dfs_stack = []
-    discovered = set()
-    # print(G)
-    # print(dfs_stack)
-    start = next(iter(G))
-    dfs_stack.append(start)
-
-    path = []
-
-
-
-
-
-    print(G)
-    print(dfs_stack)
-    while dfs_stack:
-        node = dfs_stack.pop()
-        discovered.add(node)
-        for neighbor in G[node]:
-            print(neighbor)
-            if neighbor not in discovered:
-                discovered.add(neighbor)
-                for neighbor2 in G[neighbor]:
-                    dfs_stack.append(neighbor2)
-
-
-
-
-
-
-
-    return None
-
-
-###########################
-##########################
 
 ## Create adjacency list using dictionary
 members_graph = MembersGraph.LEGEND_GRAPH
@@ -71,6 +30,7 @@ plot_instance = InteractiveGraph(
           arrows=True
 )
 plt.draw()
+plt.show()
 
 
 # Find cycle and create new graph
