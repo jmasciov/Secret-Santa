@@ -1,7 +1,7 @@
 import networkx as nx
 from netgraph import InteractiveGraph
 import matplotlib.pyplot as plt
-from Members import MembersGraph
+from MembersInformation import MembersGraph
 
 """
 Create an adjacency list graph
