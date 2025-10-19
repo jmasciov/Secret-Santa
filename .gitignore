@@ -1,1 +1,3 @@
-MembersInformation/
+MembersInformation/,
+member_details.py,
+config.ini
