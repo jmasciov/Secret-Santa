@@ -2,6 +2,7 @@ import networkx as nx
 from netgraph import InteractiveGraph
 import matplotlib.pyplot as plt
 from MembersInformation import member_graph
+import time
 import sys
 """
 Create an adjacency list graph
@@ -12,11 +13,10 @@ https://networkx.org/documentation/stable/reference/algorithms/index.html
 
 ###
 ### Lazy debug mode
-hamilton_path = ['B', 'C', 'D', 'A', 'G', 'E', 'F', 'B']
+# hamilton_path = ['B', 'C', 'D', 'A', 'G', 'E', 'F', 'B']
 
 ###
 ###
-"""
 
 ## Create adjacency list using dictionary
 members_graph = member_graph.LEGEND_GRAPH
@@ -47,8 +47,12 @@ plot_instance = InteractiveGraph(
 ## https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.approximation.traveling_salesman.traveling_salesman_problem.html#networkx.algorithms.approximation.traveling_salesman.traveling_salesman_problem
 
 print("Starting Hamilton Path...")
+start_time = time.perf_counter()
 hamilton_path = nx.approximation.traveling_salesman_problem(input_graph, cycle=True)
+end_time = time.perf_counter()
 print("Hamilton Path created.")
+elapsed_time = end_time - start_time
+print(f"Hamilton Path elapsed time: {elapsed_time:.6f} seconds.")
 # print(hamilton_path)
 # print(type(hamilton_path))
 
@@ -67,4 +71,3 @@ plot_instance = InteractiveGraph(
 )
 # plt.draw()
 # plt.show()
-"""
