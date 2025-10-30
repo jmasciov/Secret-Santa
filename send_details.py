@@ -67,7 +67,7 @@ with open("MembersInformation/hamilton_path.txt", "w") as text_file:
 #     print(i, hamilton_path[i], hamilton_path[i+1])
 
 
-subject = "SecRat Santa TEST V2"
+subject = "SecRat Santa 2025"
 
 ###
 print("Sending emails...")
