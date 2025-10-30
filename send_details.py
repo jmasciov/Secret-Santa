@@ -29,15 +29,21 @@ config.read('config.ini')
 ###
 def receiver_info(sender:Member, receiver: Member) -> str:
     email_message = f"""
-    Hello {sender.name_card},
     
-    You will be mailing to {receiver.name_card}. 
-    Name on envelope: {receiver.name_envelope}.
-    Address: {receiver.address}.
-    Pronouns: {receiver.pronouns}.
-    Theme: {receiver.theme}.
-    Requests: {receiver.requests}.
-    Interests: {receiver.interests}.
+    Dear elf {str(sender.name_card).split()[0]},
+    
+    Happy Prom! Happy Holidays! Thank you for spreading joy with this group of Inside Jokesters.
+    
+    {receiver.name_card} is on the nice list this year. Please mail a {receiver.theme} card to be opened during prom on December 6th.
+    Requests: {receiver.requests}
+    Interests: {receiver.interests}
+    Pronouns: {receiver.pronouns}
+    
+    Address: {receiver.address}
+    
+    Looking forward to another wonderful Prom Night! Please message us with questions/concerns.
+    
+    From, Santa Rats Molly and Josh
     """
     return email_message
 ###
@@ -48,7 +54,7 @@ def receiver_info(sender:Member, receiver: Member) -> str:
 ####################
 EMAIL_TEXT_FILE = "MembersInformation/"
 
-print(hamilton_path)
+# print(hamilton_path)
 hamilton_path_string = str(hamilton_path)
 
 for i in range(len(hamilton_path)-1):
@@ -61,7 +67,7 @@ with open("MembersInformation/hamilton_path.txt", "w") as text_file:
 #     print(i, hamilton_path[i], hamilton_path[i+1])
 
 
-subject = "SecRat Santa TEST 5 FINAL"
+subject = "SecRat Santa TEST V2"
 
 ###
 print("Sending emails...")
